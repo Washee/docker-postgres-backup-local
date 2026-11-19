@@ -101,3 +101,4 @@ echo "SQL backup created successfully"
 if [ -d "${HOOKS_DIR}" ]; then
   run-parts -a "post-backup" --reverse --exit-on-error "${HOOKS_DIR}"
 fi
+# trigger
