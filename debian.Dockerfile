@@ -23,6 +23,8 @@ RUN set -x \
 	&& curl --fail --retry 4 --retry-all-errors -o /usr/local/bin/go-cron.gz -L https://github.com/Washee/go-cron/releases/download/$GOCRONVER/go-cron-$TARGETOS-$TARGETARCH.gz \
 	&& gzip -vnd /usr/local/bin/go-cron.gz && chmod a+x /usr/local/bin/go-cron
 
+RUN rm -f /usr/local/bin/gosu
+
 ENV POSTGRES_DB="**None**" \
     POSTGRES_DB_FILE="**None**" \
     POSTGRES_HOST="**None**" \
