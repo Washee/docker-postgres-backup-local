@@ -2,7 +2,7 @@
 
 set -e
 
-GOCRONVER="v0.0.11"
+GOCRONVER="v0.0.12"
 MAIN_TAG="18"
 TAGS_EXTRA="17 16 15 14 13"
 PLATFORMS="linux/amd64 linux/arm64 linux/arm/v7 linux/s390x linux/ppc64le"

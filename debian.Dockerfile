@@ -1,7 +1,7 @@
 ARG BASETAG=latest
 FROM postgres:$BASETAG
 
-ARG GOCRONVER=v0.0.11
+ARG GOCRONVER=v0.0.12
 ARG TARGETOS
 ARG TARGETARCH
 
@@ -20,7 +20,7 @@ RUN set -x \
 
 RUN set -x \
 	&& apt-get update && apt-get install -y --no-install-recommends ca-certificates curl && apt-get clean && rm -rf /var/lib/apt/lists/* \
-	&& curl --fail --retry 4 --retry-all-errors -o /usr/local/bin/go-cron.gz -L https://github.com/prodrigestivill/go-cron/releases/download/$GOCRONVER/go-cron-$TARGETOS-$TARGETARCH.gz \
+	&& curl --fail --retry 4 --retry-all-errors -o /usr/local/bin/go-cron.gz -L https://github.com/Washee/go-cron/releases/download/$GOCRONVER/go-cron-$TARGETOS-$TARGETARCH.gz \
 	&& gzip -vnd /usr/local/bin/go-cron.gz && chmod a+x /usr/local/bin/go-cron
 
 ENV POSTGRES_DB="**None**" \
